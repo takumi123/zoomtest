@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,6 +21,10 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: UiKitView(
               viewType: 'my_first_view',
+              creationParams: <String, dynamic>{
+                'label': "test",
+              },
+              creationParamsCodec: StandardMessageCodec(),
             ),
           ),
         ),
